@@ -5,8 +5,9 @@ Platform: Discord (voice channel)
 Attendees:
 - Andrew TJ
 - shindh0717
-- jaspreetS1ngh
+- Jaspreet
 - Aveer
+- asiandude121
 
 Agenda Items
 - Brainstorm project ideas
