@@ -23,19 +23,19 @@ Description: A location discovery and exploration app using Google Maps API that
 The group unanimously agreed to proceed with this idea.
 
 2. Rough Features (Epics) Identified
-    1. Save locations 
+    1. Save locations: 
         Users can save their favorite places to a personal list. Saved locations are stored in a database and displayed on the map.
 
-    2. Offline mapping
+    2. Offline mapping:
         Allow users to download map tiles or location data for offline access. Users can view saved locations even without internet connection.
 
-    3. Ranking systems
+    3. Ranking systems:
         Users can rate and review locations (1-5 stars). Locations are ranked based on average ratings, helping users discover the best spots.
 
-    4. Similar location 
+    4. Similar location: 
         Recommendations algorithm suggesting similar places based on user's saved locations, search history, and ratings.
 
-    5. Sharing route
+    5. Sharing route:
         Users can create and share routes (paths between multiple locations). Shared routes can be viewed by other users via a unique link.
 
 
