@@ -16,11 +16,11 @@ Agenda Items
 
 1. Final Decision: Map Application
 
-Project Name: WhereTo (finalized)
-
-Description: A location discovery and exploration app using Google Maps API that helps users find, rank, save, and share places of interest.
-
-The group unanimously agreed to proceed with this idea.
+    Project Name: WhereTo (finalized)
+    
+    Description: A location discovery and exploration app using Google Maps API that helps users find, rank, save, and share places of interest.
+    
+    The group unanimously agreed to proceed with this idea.
 
 2. Rough Features (Epics) Identified
     1. Save locations: 
