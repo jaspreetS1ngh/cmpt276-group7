@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Table(name = "users")
 public class User {
     
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
@@ -53,7 +53,7 @@ public class User {
     
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
-    
+    */
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
     
