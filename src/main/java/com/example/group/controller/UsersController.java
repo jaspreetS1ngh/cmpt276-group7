@@ -16,7 +16,7 @@ import com.example.group.model.User;
 import com.example.group.model.UsersRepository;
 import com.example.group.Services.UserService;
 import jakarta.servlet.http.HttpSession;
-import java.util.List
+import java.util.List;
 
 @Controller
 public class UsersController {
