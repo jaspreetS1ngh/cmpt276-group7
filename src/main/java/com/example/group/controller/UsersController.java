@@ -76,7 +76,7 @@ public class UsersController {
         return "signup.html";
     }
 
-}    @Autowired
+    @Autowired
     private UserService userService;
     
     @GetMapping("/admin/dashboard")
