@@ -76,4 +76,43 @@ public class UsersController {
         return "signup.html";
     }
 
+}    @Autowired
+    private UserService userService;
+    
+    @GetMapping("/admin/dashboard")
+    public String adminDashboard(Model model, HttpSession session) {
+        
+        User currentUser = (User) session.getAttribute("user");
+        
+        if (currentUser == null || !currentUser.isAdmin()) {
+            return "redirect:/access-denied";
+        }
+        
+        List<User> allUsers = userService.getAllUsers();
+        
+        model.addAttribute("users", allUsers);
+        model.addAttribute("currentUser", currentUser);
+        model.addAttribute("totalUsers", allUsers.size());
+        
+        return "admin-dashboard";
+    }
+    
+    @GetMapping("/profile")
+    public String userProfile(Model model, HttpSession session) {
+        
+        User currentUser = (User) session.getAttribute("user");
+        
+        if (currentUser == null) {
+            return "redirect:/login";
+        }
+        
+        model.addAttribute("user", currentUser);
+        
+        return "user-profile";
+    }
+    
+    @GetMapping("/access-denied")
+    public String accessDenied() {
+        return "access-denied";
+    }
 }
