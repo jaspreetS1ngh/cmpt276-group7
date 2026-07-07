@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.example.group.Services.UserService;
 import com.example.group.model.User;
-import com.example.group.model.UsersRepository;
+import com.example.group.model.UserRepository;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -23,16 +24,26 @@ import jakarta.servlet.http.HttpSession;
 public class UsersController {
     private final PasswordEncoder encoder = new BCryptPasswordEncoder();
     @Autowired
-    private UsersRepository repo;
+    private UserRepository repo;
+
+    @GetMapping("/")
+    public RedirectView process(){
+        return new RedirectView("/signup");
+    }
 
     @GetMapping("/signup")
     public String showSignupPage() {
         return "signup";
     }
 
+    @GetMapping("/map")
+    public String showMapPage() {
+        return "map";
+    }
+
     @PostMapping("/signup")
     public String addUser(@RequestParam String email, @RequestParam String password, Model model) {
-        if (repo.findById(email).isPresent()) {
+        if (repo.findByEmail(email).isPresent()) {
             model.addAttribute("email_error", "That email is already registered to an account");
             return "signup";
         }
@@ -59,7 +70,7 @@ public class UsersController {
     @PostMapping("/login")
     public String loginUser(@ModelAttribute("loginForm")User loginForm, Model model, HttpSession session) {
 
-        Optional<User> userOpt = repo.findById(loginForm.getEmail());
+        Optional<User> userOpt = repo.findByEmail(loginForm.getEmail());
 
         if (userOpt.isPresent()) {
             User user = userOpt.get();
