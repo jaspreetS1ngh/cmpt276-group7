@@ -1,0 +1,80 @@
+Group 7, Iteration 1, Use Cases
+General cases
+
+1. The persona is an unregistered user, the story is as follows: a new user wants to sign up
+for the application with and email and password. On success the result is their account
+will be made and they will be redirected to the login page. A test case is that a suitable
+email and password is provided, an account within the database to be creates
+successfully. A failure case is an empty email where the user should expect to be
+repromoted for another email, or an email that does not contain an @ and at least one
+character after it or they will again be repromoted for another email, or they enter a
+password with fewer than 8 characters where they will be reprompted for another
+password.
+
+2. The persona is a registered user, the story is as follows: a registered user wants to login to
+their account with their email and password. On success the result is they are redirected
+to the user profile page. The test cases are that the email and password must be registered
+to an account, the user is authenticated and redirected, the failure cases are as follows: if
+the email doesn’t contain an @ and at least one symbol after it, the user is repromoted for
+a valid email, if the password or email is incorrect it will say invalid email or password
+and the user is repromoted for them.
+
+3. The persona is a registered user, the story is as follows: after logging in a user has arrived
+at their profile page and views the different features. The result is they can view their
+email and role within the system (defaults to regular), they can log out of their account, or
+they can proceed to the map. If logout is pressed, they will simply be redirected back to
+the login page. If they press the proceed to map button they will be redirected to the view
+location feature on the map.
+
+4. The persona is a site admin. The story is as follows: an admin logs in with their special
+admin email and password. The result is the admin has arrived at the dashboard where
+they can view the total number of users in the database, the emails corresponding to their
+accounts, and the time of the creation of their accounts.
+
+5. The persona is a site admin. The story is as follows: an admin is at the dashboard where
+they press the logout button. The result is the admin gets redirected to the login page.
+
+6. The persona is a sneaky user. The story is as follows: a user attempts to access the admin
+dashboard by typing in /admin-dashboard at the end of the url. The result is they will be
+intercepted and redirected to an access denied page where they receive a “You don't have
+permission to view this page” message and a button to redirect them back to their profile
+page.
+
+7. The persona is a curious unregistered user. The story is as follows: an unregistered user
+attempts to view their profile despite not having an account by typing in /profile at the
+end of the url. The result is they will be intercepted and redirected to the login page
+where they can make an account first.
+
+Map specific cases:
+The map shows the user's current location with a blue dot. Click the 'Similar location'
+dropdown and select either "Cafe", "Restaurant", "Museum", or "Park". If you select a
+category, the system searches for the 20 nearest places of that type. If you select the
+"Similar location", the system clears all markers from the map, leaving only the blue dot.
+If you click on a marker on the map, the system displays name and address of that
+location. If you click on a logout button, it will logout and go back to login page.
+
+Test cases: Similar location feature
+
+Input:
+1. A selection from "Similar location" dropdown
+2. User clicking on a map marker
+Tests:
+
+1. Test for inputs where the user selects a category, and 20 nearest places are successfully
+displayed.
+
+2. Test for inputs where the user selects 'Similar location' and all markers disappears from
+the map.
+
+3. Test for inputs where no results found nearby
+
+4. Test for inputs where the user clicks on a marker to see specific location details
+
+5. Test for inputs where the user clicks logout button
+
+Output:
+1. Markers display
+2. Markers disappear
+3. “No results found nearby” error message
+4. Shows name and address of the selected location.
+5. Logs out and go back to login page
