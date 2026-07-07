@@ -94,7 +94,7 @@ public class UsersController {
         response.setHeader("Pragma", "no-cache");
         response.setHeader("Expires", "0");
         request.getSession().invalidate();
-        return "redirect:/login";
+        return "login";
     }
 
     @Autowired
