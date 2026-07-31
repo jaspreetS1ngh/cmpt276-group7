@@ -40,12 +40,12 @@ async function createMap() {
     const geocoder = new Geocoder();
    
 
-const trafficLayer = new google.maps.TrafficLayer();
+const trafficupdate = new google.maps.TrafficLayer();
 let trafficOn = false;
 
-window.toggleTraffic = function () {
+window.updateTraffic = function () {
   trafficOn = !trafficOn;
-  trafficLayer.setMap(trafficOn ? innerMap : null);
+  trafficupdate.setMap(trafficOn ? innerMap : null);
 };
 
     innerMap.setOptions({
