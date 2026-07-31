@@ -38,6 +38,15 @@ async function createMap() {
     infoWindow = new InfoWindow();
     innerMap = mapElement.innerMap;
     const geocoder = new Geocoder();
+   
+
+const trafficLayer = new google.maps.TrafficLayer();
+let trafficOn = false;
+
+window.toggleTraffic = function () {
+  trafficOn = !trafficOn;
+  trafficLayer.setMap(trafficOn ? innerMap : null);
+};
 
     innerMap.setOptions({
         mapTypeControl: false,
